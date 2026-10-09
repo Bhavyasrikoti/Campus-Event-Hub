@@ -1,0 +1,486 @@
+
+/* =========================================
+   CAMPUS EVENT HUB — MODERN UI
+   ========================================= */
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --navy: #172554;
+    --background: #f5f7ff;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --success: #15803d;
+    --danger: #b91c1c;
+    --radius: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+
+header {
+    background: linear-gradient(135deg, #172554, #3730a3 65%, #6366f1);
+    color: white;
+    text-align: center;
+    padding: 44px 20px 48px;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #e0e7ff;
+    font-size: 16px;
+}
+
+/* Main layout */
+
+main {
+    width: min(1100px, 92%);
+    margin: 32px auto 48px;
+}
+
+.card {
+    background: var(--surface);
+    padding: clamp(20px, 3vw, 30px);
+    margin-bottom: 26px;
+    border: 1px solid #e8eaf4;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 20px rgba(30, 41, 59, 0.045);
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 9px 28px rgba(30, 41, 59, 0.075);
+}
+
+.card h2 {
+    font-size: 22px;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+    margin-bottom: 20px;
+    color: var(--navy);
+}
+
+.card h3 {
+    color: var(--text);
+}
+
+/* Forms */
+
+form {
+    display: grid;
+    gap: 12px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 650;
+    color: #334155;
+    margin-bottom: -7px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: none;
+}
+
+input:disabled,
+select:disabled,
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Buttons */
+
+button {
+    padding: 11px 17px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background: var(--primary-dark);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.18);
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 3px solid #a5b4fc;
+    outline-offset: 2px;
+}
+
+/* Section headings and refresh actions */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    margin-bottom: 0;
+}
+
+/* Event cards */
+
+.event {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 22px;
+    margin-bottom: 16px;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.event:hover {
+    transform: translateY(-2px);
+    border-color: #c7d2fe;
+    box-shadow: 0 8px 22px rgba(30, 41, 59, 0.06);
+}
+
+.event h3 {
+    font-size: 19px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.event p {
+    margin: 7px 0;
+    color: var(--muted);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.event button {
+    margin-top: 14px;
+}
+
+/* Registration cards */
+
+.registration {
+    background: #fafbff;
+    border: 1px solid var(--border);
+    padding: 18px;
+    margin-bottom: 13px;
+    border-radius: 12px;
+    transition: border-color 0.2s;
+}
+
+.registration:hover {
+    border-color: #c7d2fe;
+}
+
+.registration p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.registration button {
+    margin-top: 10px;
+    background: #dc2626;
+}
+
+.registration button:hover:not(:disabled) {
+    background: #b91c1c;
+}
+
+/* Account creation feedback */
+
+#userMessage,
+#eventMessage {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* Password field and visibility button */
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-wrapper input#password {
+    width: 100%;
+    padding-right: 50px;
+}
+
+.password-wrapper button#togglePassword {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #475569;
+    font-size: 19px;
+    box-shadow: none;
+}
+
+.password-wrapper button#togglePassword:hover {
+    background: #eef2ff;
+    color: var(--primary);
+}
+
+/* Password checklist — vertical layout */
+
+.password-rules {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 7px 0 12px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.password-rules p {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.password-rules .valid {
+    color: var(--success);
+}
+
+.password-rules .invalid {
+    color: var(--danger);
+}
+
+/* Empty or informational content */
+
+#eventsContainer:empty::after {
+    content: "No events to display yet.";
+    display: block;
+    padding: 20px;
+    color: var(--muted);
+    text-align: center;
+}
+
+#registrationsContainer:empty::after {
+    content: "Your registrations will appear here.";
+    display: block;
+    padding: 20px;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 24px 16px;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+    background: #fff;
+}
+
+/* Responsive layout */
+
+@media (max-width: 600px) {
+    header {
+        padding: 32px 16px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    main {
+        width: 94%;
+        margin-top: 20px;
+    }
+
+    .card {
+        padding: 18px;
+        margin-bottom: 18px;
+        border-radius: 13px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .section-header {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .event {
+        padding: 17px;
+    }
+
+    .event h3 {
+        font-size: 17px;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
+
+
+
+/* Compact dashboard layout */
+header {
+    padding: 30px 20px 34px;
+}
+
+header h1 {
+    font-size: clamp(28px, 3vw, 36px);
+}
+
+main {
+    max-width: 1050px;
+    margin: 24px auto 40px;
+}
+
+.card {
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin-bottom: 16px;
+}
+
+form {
+    gap: 10px;
+}
+
+input,
+select,
+textarea {
+    padding: 11px 13px;
+}
+
+.password-rules {
+    gap: 3px;
+    margin: 4px 0 8px;
+    font-size: 12px;
+}
+
+/* Clearer event and registration sections */
+.event,
+.registration {
+    box-shadow: 0 2px 7px rgba(30, 41, 59, 0.035);
+}
+
+.event button,
+.registration button {
+    min-height: 40px;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+    main {
+        width: 94%;
+        margin-top: 16px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
+
+/* Inline event feedback */
+.event-feedback {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.event-feedback.success {
+    color: #166534;
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+}
+
+.event-feedback.error {
+    color: #991b1b;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+}

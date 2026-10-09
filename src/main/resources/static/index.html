@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Campus Event Hub</h1>
+        <p>Discover and register for campus events</p>
+    </header>
+
+    <main>
+
+        <!-- Create User -->
+        <section class="card">
+            <section class="card">
+    <h2>Create Account</h2>
+
+    <form id="userForm">
+        <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            required
+        >
+
+       
+
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Email (e.g. name@gmail.com)"
+        autocomplete="email"
+        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
+        title="Enter an email with a valid domain suffix, such as name@gmail.com"
+        required
+    >
+
+
+
+
+        
+<label for="password">Password</label>
+
+<div class="password-wrapper">
+    <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Create a strong password"
+        minlength="8"
+        autocomplete="new-password"
+        required
+    >
+
+    <button
+        type="button"
+        id="togglePassword"
+        class="password-toggle"
+        aria-label="Show password"
+        aria-pressed="false"
+    >
+        👁
+    </button>
+</div>
+
+<div id="passwordRules" class="password-rules">
+    <p id="ruleLength">○ At least 8 characters</p>
+    <p id="ruleUpper">○ One uppercase letter (A–Z)</p>
+    <p id="ruleLower">○ One lowercase letter (a–z)</p>
+    <p id="ruleDigit">○ One number (0–9)</p>
+    <p id="ruleSpecial">○ One special character (!@#$...)</p>
+</div>
+
+
+
+        <select id="role" required>
+            <option value="">Select Account Type</option>
+            <option value="STUDENT">Student</option>
+            <option value="ORGANIZER">Organizer</option>
+        </select>
+
+        <button type="submit">Create Account</button>
+    </form>
+
+    <p id="userMessage"></p>
+</section>
+<section id="organizerDashboard" class="card" style="display: none;">
+    <h2>Organizer Dashboard</h2>
+
+    <p>Create and manage your campus events.</p>
+
+    <h3>Create New Event</h3>
+
+    <form id="eventForm">
+
+        <input
+            type="text"
+            id="eventTitle"
+            placeholder="Event Title"
+            required
+        >
+
+        <textarea
+            id="eventDescription"
+            placeholder="Event Description"
+            required
+        ></textarea>
+
+        <input
+            type="date"
+            id="eventDate"
+            required
+        >
+
+        <input
+            type="time"
+            id="eventTime"
+            required
+        >
+
+        <input
+            type="text"
+            id="eventLocation"
+            placeholder="Location"
+            required
+        >
+
+        <input
+            type="number"
+            id="eventCapacity"
+            placeholder="Capacity"
+            min="1"
+            required
+        >
+
+        <button type="submit">Create Event</button>
+    </form>
+
+    <p id="eventMessage"></p>
+
+    <h3>My Events</h3>
+
+    <div id="organizerEvents">
+        <p>No events created yet.</p>
+    </div>
+</section>
+
+
+        <!-- Events -->
+        <section class="card">
+
+            <div class="section-header">
+                <h2>Available Events</h2>
+
+                <button onclick="loadEvents()">
+                    Refresh Events
+                </button>
+            </div>
+
+            <div id="eventsContainer">
+                <p>Loading events...</p>
+            </div>
+
+        </section>
+
+
+        <!-- My Registrations -->
+        <section class="card">
+
+            <div class="section-header">
+                <h2>My Registrations</h2>
+
+                <button onclick="loadRegistrations()">
+                    Refresh
+                </button>
+            </div>
+
+            <div id="registrationsContainer">
+                <p>Create/login as a user to view registrations.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Campus Event Hub &copy; 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
